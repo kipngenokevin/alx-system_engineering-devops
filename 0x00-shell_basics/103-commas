@@ -1,2 +1,2 @@
 #!/bin/bash
-printf './, ../, %s\n' $(ls -p | grep -v '/')
+ls -p -a | sort -d -f --field-separator="/" -k 2,2 | tr '\n' ',' | sed 's/,$/\n/'
