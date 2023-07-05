@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -aF | tr '\n' ',' | sed 's/,$/\n/'
+printf './, ../, %s\n' $(ls -p | grep -v '/')
