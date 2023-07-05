@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p -a | sort -d -f --field-separator="/" -k 2,2 | tr '\n' ',' | sed 's/,$/\n/'
+ls -p -a | awk '{if ($0 == "../") { print "./" } else if ($1 == "./") { print "../" } else { print }}' | sort -d -f --field-separator="/" -k 2,2 | tr '\n' ',' | sed 's/,$/\n/'
