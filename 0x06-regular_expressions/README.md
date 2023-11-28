@@ -46,8 +46,8 @@ Marks the end of a capturing group.
 
 11. **Opening square bracket** `[`
 
-Defines a character class. Example `[aeiou]` matches any vowel.
+	Defines a character class. Example `[aeiou]` matches any vowel.
 
 12. **Opening curly brace** `{`
 
-Denotes a quantifier for specifying the exact number of occureneces. Example `a{3}` will match 'aaa'
+	Denotes a quantifier for specifying the exact number of occureneces. Example `a{3}` will match 'aaa'
