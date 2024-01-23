@@ -3,21 +3,15 @@
 
 apt-get update
 sudo apt-get install nginx -y
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
-echo "
-server {
-	listen 80 default_server;
+echo "Hello World!" > /var/www/html/index.html
+echo "server {
+	listen 80;
 	listen [::]:80 default_server;
-
 	root /var/www/html;
-
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-
+	index index.html;
 	location /redirect_me {
-		return 304 https://www.google.com;
+		return 301 https://github.com/kipngenokevin;
 	}
 }
-" > /var/www/html/index.nginx-debian.html
-sudo service nginx restart
+" > /etc/nginx/sites-available/default
+service nginx restart
